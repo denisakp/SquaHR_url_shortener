@@ -4,16 +4,18 @@ import { Alert } from "flowbite-vue";
 defineProps({
     type: {
         type: String,
-        default: 'success',
+        default: "success",
         validator(value) {
-            return ['info', 'danger', 'success', 'warning', 'dark'].includes(value);
+            return ["info", "danger", "success", "warning", "dark"].includes(
+                value,
+            );
         },
     },
     message: {
         type: String,
-        required: true
-    }
-})
+        required: true,
+    },
+});
 </script>
 
 <template>

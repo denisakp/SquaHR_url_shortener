@@ -34,9 +34,9 @@ class ShortenerController extends Controller
     /**
      * @param Request $request
      * @param string $code
-     * @return \Symfony\Component\HttpFoundation\Response|RedirectResponse
+     * @return RedirectResponse|void
      */
-    public function show(Request $request, string $code): \Symfony\Component\HttpFoundation\Response|RedirectResponse
+    public function show(Request $request, string $code)
     {
         $tiny_url = ShortLink::where('code', $code)->first();
 
@@ -46,8 +46,6 @@ class ShortenerController extends Controller
         $statistic = new Statistic(['visitor' => $request->ip()]);
 
         $tiny_url->statistics()->save($statistic);
-
-        return Inertia::location($tiny_url->url);
     }
 
 
