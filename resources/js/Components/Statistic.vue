@@ -8,12 +8,12 @@ defineProps(["unique_visitors", "total", "most_clicked"]);
             <div class="p-4 flex items-center border border-black">
                 <div>
                     <p
-                        class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                        class="mb-2 text-sm font-medium text-gray-600"
                     >
                         Unique Visitors
                     </p>
                     <p
-                        class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                        class="text-lg font-semibold text-gray-700"
                     >
                         {{ unique_visitors }}
                     </p>
@@ -22,17 +22,17 @@ defineProps(["unique_visitors", "total", "most_clicked"]);
         </div>
 
         <div
-            class="min-w-0 rounded-lg shadow-xs overflow-hidden bg-white dark:bg-gray-800"
+            class="min-w-0 rounded-lg shadow-xs overflow-hidden bg-white"
         >
             <div class="p-4 flex items-center border border-black">
                 <div>
                     <p
-                        class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                        class="mb-2 text-sm font-medium text-gray-600"
                     >
                         Count Link
                     </p>
                     <p
-                        class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                        class="text-lg font-semibold text-gray-700"
                     >
                         {{ total }}
                     </p>
@@ -41,19 +41,18 @@ defineProps(["unique_visitors", "total", "most_clicked"]);
         </div>
 
         <div
-            class="min-w-0 rounded-lg shadow-xs overflow-hidden bg-white dark:bg-gray-800"
+            class="min-w-0 rounded-lg shadow-xs overflow-hidden bg-white"
         >
             <div class="p-4 flex items-center border border-black">
                 <div>
                     <p
-                        class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                        class="mb-2 text-sm font-medium text-gray-600"
                     >
                         Most clicked link
                     </p>
-                    <p
-                        class="text-lg font-semibold text-blue-700 dark:text-gray-200"
-                    >
-                        {{ most_clicked }}
+                    <p>
+                        <template v-if="most_clicked"> <span class="text-lg font-semibold text-blue-700"></span> {{ most_clicked }}</template>
+                        <template v-else> NONE </template>
                     </p>
                 </div>
             </div>
