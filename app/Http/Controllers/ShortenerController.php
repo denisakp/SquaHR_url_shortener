@@ -41,13 +41,12 @@ class ShortenerController extends Controller
         $tiny_url = ShortLink::where('code', $code)->first();
 
         if(!$tiny_url)
-            return to_route('shortener.app')->with('message', 'Cannot find element with code short ' . $code);
+            return to_route('shortener.app')->with('error', 'Cannot find element with code short ' . $code);
 
         $statistic = new Statistic(['visitor' => $request->ip()]);
 
         $tiny_url->statistics()->save($statistic);
     }
-
 
     /**
      * @param ShortenerRequest $request

@@ -16,7 +16,7 @@ const props = defineProps(["link", "stats", "unique_view", "rank"]);
 const tableHeaders = ref(["Viewed At", "IP Address"]);
 
 const currentPage = ref(1);
-const perPage = ref(2);
+const perPage = ref(15);
 
 const displayedRows = computed(() => {
     if (!props.stats) return [];
