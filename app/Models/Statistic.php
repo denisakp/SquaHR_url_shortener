@@ -36,4 +36,21 @@ class Statistic extends Model
         if ($element)
             return $element->short_link_id;
     }
+
+    /**
+     * Get the rank of a given link
+     * @param $link
+     * @return bool|int
+     */
+    public static function getRank($link): bool|int
+    {
+        $rank = DB::table('statistics')
+            ->select('short_link_id', DB::raw('COUNT(*) as count'))
+            ->groupBy('short_link_id')
+            ->orderByDesc('count')
+            ->pluck('short_link_id')
+            ->search($link);
+
+        return $rank + 1;
+    }
 }
