@@ -18,7 +18,7 @@ const props = defineProps({
     },
     perPage: {
         type: Number,
-        default: 10,
+        default: 15,
     },
     totalItems: {
         type: Number,
@@ -40,11 +40,10 @@ const displayedRows = computed(() => {
     return props.data.slice(startIndex, endIndex);
 });
 
-const generateLink = (value) => page.props.url + "/" + value;
-
-const reload = (link) => {
+const reload = (link, shorted) => {
+    router.get(`/${shorted}`)
     window.open(link);
-    router.reload();
+
 };
 </script>
 
@@ -99,8 +98,8 @@ const reload = (link) => {
                             <table-cell class="border border-slate-300">
                                 <Link
                                     class="font-medium text-blue-600 hover:underline"
-                                    :href="generateLink(link.code)"
-                                    @click="reload(link.url)"
+                                    :href="link.url"
+                                    @click="reload(link.url, link.code)"
                                 >
                                     {{ link.code }}
                                 </Link>
