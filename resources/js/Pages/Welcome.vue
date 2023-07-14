@@ -91,6 +91,13 @@ const submit = () =>
                         />
                     </template>
 
+                    <template v-if="$page.props.flash.error">
+                        <Alert
+                            :message="$page.props.flash.error"
+                            type="danger"
+                        />
+                    </template>
+
                     <div class="py-4">
                         <h2>Statistics</h2>
                         <DataTable :data="data" :total-items="data.length" />
