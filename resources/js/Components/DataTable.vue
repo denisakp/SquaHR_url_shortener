@@ -41,9 +41,8 @@ const displayedRows = computed(() => {
 });
 
 const reload = (link, shorted) => {
-    router.get(`/${shorted}`)
+    router.get(`/${shorted}`);
     window.open(link);
-
 };
 </script>
 
