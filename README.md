@@ -2,6 +2,15 @@
 
 This project is my solution for the Coding Challenge proposed by SquaHR
 
+## Demo
+
+### Home page
+![Home page](index_page_screen.png)
+
+### URL Stats page
+![Alt text](stat_page_screen.png)
+
+
 ## What the project is about?
 
 Build a URL shortener web application using Laravel and Vue.js.
