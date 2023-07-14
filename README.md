@@ -143,3 +143,11 @@ If you have familiar with Docker, here are the steps you must follow
 # Conclusion
 
 By combining Laravel, MySQL, Vue.js, Inertia, and Laravel Sail, I have developed a URL shortener application with a robust backend, efficient data management using MySQL, an interactive user interface powered by Vue.js, and seamless frontend-backend communication facilitated by Inertia. Laravel Sail further simplifies the setup and management of my development environment.
+
+# Feature to add maybe later
+
+- [ ] Make the provided link updatable
+- [ ] Get a new shorted code for an existing url
+- [ ] Save the user device metadata for analytics purposes
+- [ ] share the shorted link on social networks
+- [ ] export data in csv format
