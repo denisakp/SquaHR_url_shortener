@@ -25,7 +25,7 @@ class ShortenerController extends Controller
             [
                 'data' => ShortLink::withCount('statistics')->latest()->get(),
                 'unique_visitors' => Statistic::distinct('visitor')->count('visitor'),
-                'most_clicked' => config('app.url') . '/' . $most_clicked->code
+                'most_clicked' => $most_clicked ? config('app.url') . '/' . $most_clicked->code : 'NONE'
             ]
         );
     }

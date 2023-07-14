@@ -1,66 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SquaHR URL Shortener Coding challenge
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is my solution for the Coding Challenge proposed by SquaHR
 
-## About Laravel
+## What the project is about?
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Build a URL shortener web application using Laravel and Vue.js.
+The application should
+allow users to shorten long URLs into shorter, more manageable ones.
+Implement the
+following features:
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Accept a long URL input from the user.
+2. Generate a unique short URL for the given long URL.
+3. Store the mapping between the short URL and the original long URL.
+4. Redirect users to the original URL when they access the short URL.
+5. Display a list of previously shortened URLs with their corresponding statistics (e.g.,
+   click count).
+6. Show basic stats about URL visits, most visited URLs
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Description of the used stack
 
-## Learning Laravel
+### Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Laravel is an open-source PHP web framework.
+It follows the MVC (Model-View-Controller) design pattern and provides an expressive and elegant syntax,
+making it easy to develop robust and scalable web applications.
+Laravel offers built-in features such as database management,
+session handling, authentication, form validation, and more.
+It promotes clean and well-structured development practices.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Laravel Sail package
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Laravel Sail is a lightweight command-line interface (CLI) for managing development environments using Docker. It provides a pre-packaged Docker configuration specifically tailored for Laravel applications. Sail streamlines the setup process by handling the installation and configuration of the necessary services, such as a web server, database, and caching. It enables developers to quickly set up a consistent and portable development environment.
 
-## Laravel Sponsors
+### MySQL Database
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+MySQL is a popular open-source relational database management system.
+It is commonly used with web applications to store and manage data.
+MySQL provides stability, good performance, and comprehensive SQL language support.
+It efficiently handles data operations such as create, read, update, and delete (CRUD)
 
-### Premium Partners
+### VueJS 3
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Cubet Techno Labs](https://cubettech.com)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[Many](https://www.many.co.uk)**
--   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
--   **[DevSquad](https://devsquad.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[OP.GG](https://op.gg)**
--   **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
--   **[Lendio](https://lendio.com)**
+Vue.js is a progressive JavaScript framework for building user interfaces.
+Vue.js 3, the latest version,
+offers enhanced performance and a more efficient reactivity system compared to its predecessors.
+It focuses on creating reusable components and provides a reactive approach for manipulating the Document Object Model
+(DOM).
+Vue.js simplifies the creation of interactive user interfaces,
+supports advanced features like routing and state management, and can be easily integrated into existing applications.
 
-## Contributing
+### InertiaJs
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+InertiaJs is a library that allows you to build web applications by seamlessly combining backend frameworks
+(like Laravel) with frontend frameworks
+(like Vue.js).
+It eliminates the need for creating a RESTFul API
+or using AJAX calls to communicate between the frontend and backend parts of the application.
+Inertia uses the JSON protocol to send data and maintain application state,
+simplifying development and improving performance.
 
-## Code of Conduct
+## How to start the project
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The project has been scaffolded using Laravel sails
 
-## Security Vulnerabilities
+1. Clone the project
+    ```shell
+    git clone https://github.com/denisakp/SquaHR_url_shortener.git
+    cd SquaHR_url_shortener
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. Install composer dependencies
+    ```shell
+    composer install
+    ```
 
-## License
+3. Install Npm dependencies
+    ```shell
+    npm i
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. Create e .env file and update its content if needed
+    ```shell
+    cp .env.example .env
+    ```
+
+5. Generate Laravel APP Key
+    ```shell
+    php artisan key:generate --ansi
+    ```
+
+6. Run migrations
+    ```shell
+    php artisan migrate
+    ```
+
+7. Start Laravel server
+    ```shell
+    php artisan serve
+    ```
+
+8. Start Node.js development server
+    ```shell
+    npm run dev
+    ```
+
+9. Open your browser at http://localhost:8000
+
+## Dockerized environment
+
+If you have familiar with Docker, here are the steps you must follow
+
+1. Clone the project
+    ```shell
+    git clone https://github.com/denisakp/SquaHR_url_shortener.git
+    cd SquaHR_url_shortener
+    ```
+2. Create e .env file and update its content if needed
+    ```shell
+    cp .env.example .env
+    ```
+
+3. Generate Laravel APP Key
+    ```shell
+    php artisan key:generate --ansi
+    ```
+
+4. Everything has already been configured, so just run the following command to start the Dev environment
+    ``` shell
+    ./vendor/bin/sail up
+    ```
+5. Open a new Tab in your terminal and run the migration
+    ```shell
+    ./vendor/bin/sail artisan migrate
+    ``` 
+6. Start the Node.js development server
+    ```shell
+    ./vendor/bin/sail npm run dev
+    ```
+7. Open your browser at http://localhost
+
+# Conclusion
+
+By combining Laravel, MySQL, Vue.js, Inertia, and Laravel Sail, I have developed a URL shortener application with a robust backend, efficient data management using MySQL, an interactive user interface powered by Vue.js, and seamless frontend-backend communication facilitated by Inertia. Laravel Sail further simplifies the setup and management of my development environment.

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ShortenerController;
+use App\Http\Controllers\StatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ShortenerController::class, 'index'])->name('shortener.app');
 Route::get('/{code}', [ShortenerController::class, 'show'])->name('shortener.show');
 Route::post('/shortener', [ShortenerController::class, 'store'])->name('shortener.store');
+Route::get('/{shortLink}/stats', StatController::class)->name('link.stats');

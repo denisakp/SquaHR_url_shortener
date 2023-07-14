@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\DB;
 
 class ShortLink extends Model
 {
@@ -14,7 +13,7 @@ class ShortLink extends Model
     protected $fillable = ['url', 'code', 'ip_address'];
 
     /**
-     * Relation with Statistic model
+     * Relation with a Statistic model
      * @return HasMany
      */
     public function statistics(): HasMany

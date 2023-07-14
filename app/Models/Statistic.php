@@ -23,9 +23,9 @@ class Statistic extends Model
     }
 
     /**
-     * @return mixed
+     * @return mixed|void
      */
-    public static function  getMostClickedUrl(): mixed
+    public static function  getMostClickedUrl()
     {
         $element = DB::table('statistics')
             ->select('short_link_id', DB::raw('COUNT(*) as row_count'))
@@ -33,6 +33,24 @@ class Statistic extends Model
             ->orderByDesc('row_count')
             ->first();
 
-        return $element->short_link_id;
+        if ($element)
+            return $element->short_link_id;
+    }
+
+    /**
+     * Get the rank of a given link
+     * @param $link
+     * @return bool|int
+     */
+    public static function getRank($link): bool|int
+    {
+        $rank = DB::table('statistics')
+            ->select('short_link_id', DB::raw('COUNT(*) as count'))
+            ->groupBy('short_link_id')
+            ->orderByDesc('count')
+            ->pluck('short_link_id')
+            ->search($link);
+
+        return $rank + 1;
     }
 }

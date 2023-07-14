@@ -25,10 +25,11 @@ const props = defineProps({
         default: 1,
     },
 });
+
 const page = usePage();
 
 const currentPage = ref(1);
-const tableHeaders = ref(["Long URL", "Shorted Code", "Unique Clicks"]);
+const tableHeaders = ref(["Long URL", "Shorted Code", "Views counter"]);
 
 const displayedRows = computed(() => {
     if (!props.data) return [];
@@ -67,6 +68,11 @@ const reload = (link) => {
                             >{{ header }}</table-head-cell
                         >
                     </template>
+                    <table-head-cell
+                        ><span class="sr-only border border-slate-300"
+                            >Edit</span
+                        ></table-head-cell
+                    >
                 </table-head>
 
                 <table-body>
@@ -104,6 +110,14 @@ const reload = (link) => {
                                 class="px-6 py-3 border border-slate-300"
                                 >{{ link.statistics_count }}</table-cell
                             >
+                            <table-cell class="border border-slate-300">
+                                <Link
+                                    class="font-medium text-yellow-400 hover:underline"
+                                    :href="`/${link.id}/stats`"
+                                >
+                                    View Stats
+                                </Link>
+                            </table-cell>
                         </table-row>
                     </template>
                 </table-body>
